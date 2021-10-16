@@ -37,7 +37,7 @@ def scrape():
             facts_url = url['table_url']
             browser.visit(facts_url)
             facts_table = pd.read_html(facts_url)
-            facts_df = facts_table[1]
+            facts_df = facts_table[1].head()
             fact_table = facts_df.to_html()
             title = url['title']
         #facts_df = facts_df.set_index("RANK THIS WEEK")

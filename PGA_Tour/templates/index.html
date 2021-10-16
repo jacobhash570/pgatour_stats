@@ -30,12 +30,12 @@
             {% for stat in stats.dataframe%} 
               <div class="col-6 border">
               </br>
-                    <div>
-                        {{stat.dataframes | safe }}
-                    </div>
-                    <div>
-                      <h4> {{stat.title}} </h4>  
-                    </div>
+                <div>
+                    <h4> {{stat.title}} </h4>  
+                </div>
+                <div>
+                    {{stat.dataframes | safe }}
+                </div>
             
               </div>
             {% endfor %}
