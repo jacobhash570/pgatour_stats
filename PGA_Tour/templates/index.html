@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PGA Tour Stats</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center border-bottom">
+      <h1 class="font-weight-bold">PGA Tour Stats</h1>
+      <p><a class="btn btn-primary btn-md" href="../scrape" role="button">Scrape New Data</a></p>
+    </div>
+      
+    </div>
+  </br>
+  <hr>      
+  <hr>
+    <div class="row">
+      <div class="col-md-8 offset-4">
+        <h2 class="align-items-center"><u>Stats</u></h2>  
+      </div>
+    </div>
+    </br>
+    <div class="row">       
+            {% for stat in stats.dataframe%} 
+              <div class="col-6 border">
+              </br>
+                    <div>
+                        {{stat.dataframes | safe }}
+                    </div>
+                    <div>
+                      <h4> {{stat.title}} </h4>  
+                    </div>
+            
+              </div>
+            {% endfor %}
+    </div> 
+
+  <hr>
+</body>
+
+</html>
