@@ -37,15 +37,17 @@ def scrape():
     for url in table_urls:    
             facts_url = url['table_url']
             browser.visit(facts_url)
-            facts_table = pd.read_html(facts_url, index_col=0)
+            facts_table = pd.read_html(facts_url)
             facts_df = facts_table[1]
-            pd.set_option('colheader_justify', 'center')
+            facts_df.columns = facts_df.columns.str.replace('\xa0', ' ')
+            fact_dict = facts_df.to_dict('records')
+            #pd.set_option('colheader_justify', 'center')
             #facts_df.rename( columns={0 :'RANK THIs WEEK'}, inplace=True )
-            fact_table = facts_df.to_html(col_space=2, justify='center', max_rows=6)
+            #fact_table = facts_df.to_html(col_space=2, justify='center', max_rows=6)
             title = url['title']
         #facts_df = facts_df.set_index("RANK THIS WEEK")
-            dataframes.append({"title":title,"dataframes":fact_table})
-        
+            dataframes.append({"title":title,"dataframes":fact_dict})
+
             stats_dict={"dataframe":dataframes} 
     browser.quit()
     return stats_dict
