@@ -2,7 +2,7 @@
 
 ## A Python Flask–powered API; with HTML/CSS, JavaScript, D3, Plotly and a SQLite database.
 
-### Working application in the "Final_App" folder.
+### Working application is in the "Final_App" folder.
 
 ![pga_1](https://github.com/jacobhash570/pgatour_stats/blob/main/Images/pga_1.png)
 
