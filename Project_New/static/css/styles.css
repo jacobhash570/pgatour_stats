@@ -1,0 +1,10 @@
+.container{
+    align-items: center;
+}
+ h1{
+    text-align: left;
+}
+
+.chartButton {
+    padding-top: 15px;
+}
